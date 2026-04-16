@@ -1,0 +1,48 @@
+{
+  "endpoints": [
+    {
+      "name": "Create User",
+      "method": "POST",
+      "path": "/users",
+      "curl": "curl -X POST http://localhost:3000/users -H \"Content-Type: application/json\" -d '{\"userId\":\"user-002\",\"username\":\"juan\",\"email\":\"juan@example.com\",\"firstName\":\"Juan\",\"lastName\":\"Pérez\",\"roles\":[\"ADMIN\"]}'"
+    },
+    {
+      "name": "Login (by username)",
+      "method": "POST",
+      "path": "/login",
+      "curl": "curl -X POST http://localhost:3000/login -H \"Content-Type: application/json\" -d '{\"username\":\"juan\"}'"
+    },
+    {
+      "name": "Login (by email)",
+      "method": "POST",
+      "path": "/login",
+      "curl": "curl -X POST http://localhost:3000/login -H \"Content-Type: application/json\" -d '{\"email\":\"juan@example.com\"}'"
+    },
+    {
+      "name": "Delete User",
+      "method": "DELETE",
+      "path": "/users/:id",
+      "notes": "Replace :id with the userId (e.g. user-002)",
+      "curl": "curl -X DELETE http://localhost:3000/users/user-002"
+    },
+    {
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/products",
+      "curl": "curl -X POST http://localhost:3000/products -H \"Content-Type: application/json\" -d '{\"productId\":\"cap-003\",\"sku\":\"CSC-RP-003-NVY\",\"name\":\"Harbor Rope Course Snapback\",\"status\":\"ACTIVE\",\"pricing\":{\"sellPrice\":{\"amount\":159000,\"currency\":\"COP\"},\"cost\":{\"amount\":79000,\"currency\":\"COP\"}},\"inventory\":{\"availableQuantity\":11}}'"
+    },
+    {
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/products/:id",
+      "notes": "Replace :id with the productId (e.g. cap-003)",
+      "curl": "curl -X DELETE http://localhost:3000/products/cap-003"
+    },
+    {
+      "name": "Get Product (verify)",
+      "method": "GET",
+      "path": "/products/:id",
+      "curl": "curl http://localhost:3000/products/cap-003"
+    }
+  ]
+}
