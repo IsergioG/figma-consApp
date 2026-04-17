@@ -85,6 +85,11 @@ export class AppController {
     return this.appService.createProduct(dto as any);
   }
 
+  @Get('products')
+  getProductAll() {
+    return this.appService.getAllProduct();
+  }
+
   @Get('products/:id')
   getProduct(@Param('id') id: string) {
     return this.appService.getProduct(id);

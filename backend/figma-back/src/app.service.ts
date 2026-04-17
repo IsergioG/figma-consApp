@@ -65,6 +65,10 @@ export class AppService implements OnModuleInit {
     return this.productRepo.findOneBy({ productId: id } as any);
   }
 
+    async getAllProduct() { 
+    return this.productRepo.find();
+  }
+
   async deleteProduct(id: string) {
     const res = await this.productRepo.delete({ productId: id } as any);
     return { affected: res.affected };
