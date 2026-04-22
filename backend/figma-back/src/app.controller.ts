@@ -68,42 +68,45 @@ export class AppController {
   }
 
   @Post('users')
-  @UseGuards(JwtAuthGuard)
   createUser(@Body() dto: CreateUserDto) {
     return this.appService.createUser(dto as any);
   }
-
+  
+  @HttpCode(200)
   @Post('login')
-  login(@Body() dto: LoginDto) {
-    return this.appService.login(dto as any);
+  async login(@Body() dto: LoginDto) {
+
+    const loginData= await this.appService.login(dto as any);
+    if (loginData.ok==true) {
+      {
+        return this.authService.generateToken({ username: dto.username, email: dto.email });
+      }
+    } else {
+      return { ok: false, message: 'Invalid credentials' };
+    }
   }
 
   @Delete('users/:id')
-  @UseGuards(JwtAuthGuard)
   deleteUser(@Param('id') id: string) {
     return this.appService.deleteUser(id);
   }
 
   @Post('products')
-  @UseGuards(JwtAuthGuard)
   createProduct(@Body() dto: ProductDto) {
     return this.appService.createProduct(dto as any);
   }
 
   @Get('products')
-  @UseGuards(JwtAuthGuard)
   getProductAll() {
     return this.appService.getAllProduct();
   }
 
   @Get('products/:id')
-  @UseGuards(JwtAuthGuard)
   getProduct(@Param('id') id: string) {
     return this.appService.getProduct(id);
   }
 
   @Delete('products/:id')
-  @UseGuards(JwtAuthGuard)
   deleteProduct(@Param('id') id: string) {
     return this.appService.deleteProduct(id);
   }

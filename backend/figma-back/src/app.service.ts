@@ -37,7 +37,7 @@ export class AppService implements OnModuleInit {
     return this.userRepo.save(u);
   }
 
-  async login(query: { username?: string; email?: string }) {
+  async login(query: { username?: string; email?: string }): Promise<{ ok: boolean; user?: User; message?: string }> {
     const where = query.username ? { username: query.username } : { email: query.email };
     const user = await this.userRepo.findOneBy(where as any);
     if (!user) return { ok: false };
