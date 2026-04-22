@@ -1,7 +1,9 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, UseGuards, HttpCode } from '@nestjs/common';
 import { AppService } from './app.service';
+import { AuthService } from './auth/auth.service';
 import { IsString, IsEmail, IsOptional, IsArray, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
+import { JwtAuthGuard } from './auth/jwt.guard';
 
 class CreateUserDto {
   @IsString()
@@ -58,7 +60,7 @@ class ProductDto {
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService, private readonly authService: AuthService) {}
 
   @Get()
   getHello(): string {
@@ -66,6 +68,7 @@ export class AppController {
   }
 
   @Post('users')
+  @UseGuards(JwtAuthGuard)
   createUser(@Body() dto: CreateUserDto) {
     return this.appService.createUser(dto as any);
   }
@@ -76,27 +79,38 @@ export class AppController {
   }
 
   @Delete('users/:id')
+  @UseGuards(JwtAuthGuard)
   deleteUser(@Param('id') id: string) {
     return this.appService.deleteUser(id);
   }
 
   @Post('products')
+  @UseGuards(JwtAuthGuard)
   createProduct(@Body() dto: ProductDto) {
     return this.appService.createProduct(dto as any);
   }
 
   @Get('products')
+  @UseGuards(JwtAuthGuard)
   getProductAll() {
     return this.appService.getAllProduct();
   }
 
   @Get('products/:id')
+  @UseGuards(JwtAuthGuard)
   getProduct(@Param('id') id: string) {
     return this.appService.getProduct(id);
   }
 
   @Delete('products/:id')
+  @UseGuards(JwtAuthGuard)
   deleteProduct(@Param('id') id: string) {
     return this.appService.deleteProduct(id);
+  }
+
+  @HttpCode(200)
+  @Post('auth/token')
+  async generateToken(@Body() dto: LoginDto) {
+    return this.authService.generateToken(dto as any);
   }
 }

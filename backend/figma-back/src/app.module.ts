@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { JwtAuthGuard } from './auth/jwt.guard';
+import { AuthModule } from './auth/auth.module';
 import { User } from './entities/user.entity';
 import { Organization } from './entities/organization.entity';
 import { Branch } from './entities/branch.entity';
@@ -11,6 +13,7 @@ import { BusinessDay } from './entities/business-day.entity';
 import { CashDrawer } from './entities/cash-drawer.entity';
 import { FundingAccount } from './entities/funding-account.entity';
 import { LedgerContext } from './entities/ledger-context.entity';
+import { AuthService } from './auth/auth.service';
 
 @Module({
   imports: [
@@ -40,8 +43,10 @@ import { LedgerContext } from './entities/ledger-context.entity';
       Branch,
       Product,
     ]),
+    // Authentication module
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtAuthGuard, AuthService],
 })
 export class AppModule {}
