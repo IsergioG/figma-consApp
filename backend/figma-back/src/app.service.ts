@@ -1,8 +1,10 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { Product } from './entities/product.entity';
+import { Customer } from './entities/customer.entity';
+import { Organization } from './entities/organization.entity';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -13,6 +15,10 @@ export class AppService implements OnModuleInit {
     private readonly userRepo: Repository<User>,
     @InjectRepository(Product)
     private readonly productRepo: Repository<Product>,
+    @InjectRepository(Customer)
+    private readonly customerRepo: Repository<Customer>,
+    @InjectRepository(Organization)
+    private readonly organizationRepo: Repository<Organization>,
   ) {}
 
   getHello(): string {
@@ -20,6 +26,7 @@ export class AppService implements OnModuleInit {
   }
 
   async onModuleInit() {
+    await this.seedDefaultOrganizationsAndCustomers();
     if (process.env.SEED === 'true') {
       await this.seedFromFile();
     }
@@ -72,6 +79,132 @@ export class AppService implements OnModuleInit {
   async deleteProduct(id: string) {
     const res = await this.productRepo.delete({ productId: id } as any);
     return { affected: res.affected };
+  }
+
+  async createCustomer(data: Partial<Customer>) {
+    const organization = await this.organizationRepo.findOneBy({ companyId: data.companyId } as any);
+    if (!organization) {
+      throw new NotFoundException(`Organization with companyId ${data.companyId} does not exist`);
+    }
+
+    const c = this.customerRepo.create({
+      customerId: data.customerId,
+      customerCode: data.customerCode,
+      companyId: data.companyId,
+      organization,
+      customerType: data.customerType,
+      status: data.status || 'ACTIVE',
+      displayName: data.displayName,
+      source: data.source,
+      contact: data.contact,
+      addresses: data.addresses,
+      personProfile: data.personProfile,
+      businessProfile: data.businessProfile,
+      documents: data.documents,
+      billingProfile: data.billingProfile,
+      classification: data.classification,
+      preferences: data.preferences,
+      consents: data.consents,
+      notes: data.notes,
+    });
+    return this.customerRepo.save(c);
+  }
+
+  async getAllCustomers() {
+    return this.customerRepo.find();
+  }
+
+  async getCustomer(id: string) {
+    return this.customerRepo.findOneBy({ customerId: id } as any);
+  }
+
+  async createOrganization(data: Partial<Organization>) {
+    const org = this.organizationRepo.create({
+      companyId: data.companyId,
+      companyName: data.companyName,
+      organizationType: data.organizationType,
+      status: data.status || 'ACTIVE',
+    });
+    return this.organizationRepo.save(org);
+  }
+
+  async getAllOrganizations() {
+    return this.organizationRepo.find();
+  }
+
+  async getOrganization(id: string) {
+    return this.organizationRepo.findOneBy({ companyId: id } as any);
+  }
+
+  private async seedDefaultOrganizationsAndCustomers() {
+    try {
+      const file = path.resolve(process.cwd(), 'all_customers_Example.json');
+      if (!fs.existsSync(file)) return;
+
+      const existingCustomers = await this.customerRepo.count();
+      if (existingCustomers > 0) return;
+
+      const raw = fs.readFileSync(file, 'utf8');
+      const payload = JSON.parse(raw);
+      const customers = Array.isArray(payload?.data) ? payload.data : [];
+      if (customers.length === 0) return;
+
+      const organizationMap = new Map<string, Organization>();
+      for (const row of customers) {
+        const companyId = row.companyId;
+        if (!companyId || organizationMap.has(companyId)) continue;
+        const companyName = this.formatCompanyName(companyId);
+        const organization = this.organizationRepo.create({
+          companyId,
+          companyName,
+          organizationType: 'COMPANY',
+          status: 'ACTIVE',
+        });
+        organizationMap.set(companyId, organization);
+      }
+
+      if (organizationMap.size > 0) {
+        await this.organizationRepo.save(Array.from(organizationMap.values()));
+      }
+
+      const allOrgs = await this.organizationRepo.find();
+      const orgById = new Map(allOrgs.map((o) => [o.companyId, o]));
+
+      const mappedCustomers = customers.map((row: any) =>
+        this.customerRepo.create({
+          customerId: row.customerId,
+          customerCode: row.customerCode,
+          companyId: row.companyId,
+          organization: orgById.get(row.companyId),
+          customerType: row.customerType,
+          status: row.status || 'ACTIVE',
+          displayName: row.displayName,
+          source: row.source,
+          contact: row.contact,
+          addresses: row.addresses,
+          personProfile: row.personProfile || null,
+          businessProfile: row.businessProfile || null,
+          documents: row.documents || null,
+          billingProfile: row.billingProfile || null,
+          classification: row.classification || row.classificationSummary || null,
+          preferences: row.preferences || null,
+          consents: row.consents || null,
+          notes: row.notes || null,
+        }),
+      );
+
+      await this.customerRepo.save(mappedCustomers);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Default seed error', err?.message ?? err);
+    }
+  }
+
+  private formatCompanyName(companyId: string) {
+    return companyId
+      .split('-')
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(' ');
   }
 
   private async seedFromFile() {

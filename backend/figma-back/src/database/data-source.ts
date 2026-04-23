@@ -8,6 +8,7 @@ import { BusinessDay } from '../entities/business-day.entity';
 import { CashDrawer } from '../entities/cash-drawer.entity';
 import { FundingAccount } from '../entities/funding-account.entity';
 import { LedgerContext } from '../entities/ledger-context.entity';
+import { Customer } from '../entities/customer.entity';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -28,5 +29,6 @@ export const AppDataSource = new DataSource({
     CashDrawer,
     FundingAccount,
     LedgerContext,
+    Customer,
   ],
 });

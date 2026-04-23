@@ -1,0 +1,241 @@
+{
+    "customers": [
+      {
+        "clientReferenceId": "client-customer-person-001",
+        "customerType": "PERSON",
+        "displayName": "Ana Maria Torres",
+        "preferredName": "Ana",
+        "personProfile": {
+          "firstName": "Ana Maria",
+          "middleName": null,
+          "lastName": "Torres",
+          "secondLastName": "Gomez",
+          "dateOfBirth": null,
+          "gender": null
+        },
+        "businessProfile": null,
+        "contact": {
+          "phones": [
+            {
+              "type": "MOBILE",
+              "number": "+57 320 555 0101",
+              "isPrimary": true,
+              "isWhatsAppEnabled": true
+            }
+          ],
+          "emails": [
+            {
+              "type": "PERSONAL",
+              "address": "ana.torres@example.com",
+              "isPrimary": true
+            }
+          ],
+          "preferredContactChannel": "WHATSAPP",
+          "preferredLanguage": "es-CO"
+        },
+        "documents": [
+          {
+            "type": "CC",
+            "number": "1020304050",
+            "country": "CO",
+            "isPrimary": true
+          }
+        ],
+        "billingProfile": {
+          "documentType": "CC",
+          "invoiceRequired": true,
+          "legalName": "Ana Maria Torres",
+          "taxId": "1020304050",
+          "taxRegime": "SIMPLIFIED",
+          "billingEmail": "ana.torres@example.com",
+          "electronicInvoiceEmail": "ana.facturacion@example.com"
+        },
+        "addresses": [
+          {
+            "label": "Home",
+            "type": "HOME",
+            "usage": [
+              "HOME",
+              "BILLING"
+            ],
+            "line1": "Calle 100 #10-20",
+            "line2": "Apto 402",
+            "city": "Bogota",
+            "state": "Cundinamarca",
+            "country": "CO",
+            "postalCode": "110111",
+            "instructions": "Porteria, apartamento 402.",
+            "isPrimary": true,
+            "isBillingDefault": true
+          }
+        ],
+        "classification": {
+          "tags": [
+            "vip",
+            "retail"
+          ],
+          "customerGroup": "RETAIL"
+        },
+        "preferences": {
+          "invoiceDeliveryMethod": "EMAIL",
+          "receiptDeliveryMethod": "WHATSAPP",
+          "marketingOptIn": false,
+          "allowWhatsAppNotifications": true,
+          "doNotCall": false,
+          "doNotEmail": false,
+          "doNotWhatsApp": false,
+          "preferredContactTimeWindow": {
+            "start": "14:00",
+            "end": "18:00",
+            "timeZone": "America/Bogota"
+          }
+        },
+        "consents": {
+          "privacyAccepted": true,
+          "marketingOptIn": false
+        },
+        "notes": {
+          "internalNote": "Prefers afternoon contact windows."
+        }
+      },
+      {
+        "clientReferenceId": "client-customer-business-001",
+        "customerType": "BUSINESS",
+        "displayName": "Distribuciones Norte SAS",
+        "preferredName": "Distribuciones Norte",
+        "personProfile": null,
+        "businessProfile": {
+          "legalName": "Distribuciones Norte SAS",
+          "tradeName": "Distribuciones Norte",
+          "taxId": "900123456-7",
+          "industry": "WHOLESALE_DISTRIBUTION",
+          "contactPersons": [
+            {
+              "fullName": "Maria Fernanda Rios",
+              "role": "PURCHASING_MANAGER",
+              "phone": "+57 601 555 9900",
+              "email": "compras@distribucionesnorte.co",
+              "isPrimary": true
+            },
+            {
+              "fullName": "Jorge Londono",
+              "role": "ACCOUNTING",
+              "phone": "+57 601 555 9910",
+              "email": "facturacion@distribucionesnorte.co",
+              "isPrimary": false
+            }
+          ]
+        },
+        "contact": {
+          "phones": [
+            {
+              "type": "WORK",
+              "number": "+57 601 555 9900",
+              "isPrimary": true,
+              "isWhatsAppEnabled": false
+            },
+            {
+              "type": "WORK",
+              "number": "+57 601 555 9910",
+              "isPrimary": false,
+              "isWhatsAppEnabled": false
+            }
+          ],
+          "emails": [
+            {
+              "type": "WORK",
+              "address": "compras@distribucionesnorte.co",
+              "isPrimary": true
+            },
+            {
+              "type": "WORK",
+              "address": "facturacion@distribucionesnorte.co",
+              "isPrimary": false
+            }
+          ],
+          "preferredContactChannel": "EMAIL",
+          "preferredLanguage": "es-CO"
+        },
+        "documents": [
+          {
+            "type": "NIT",
+            "number": "900123456-7",
+            "country": "CO",
+            "isPrimary": true
+          }
+        ],
+        "billingProfile": {
+          "documentType": "NIT",
+          "invoiceRequired": true,
+          "legalName": "Distribuciones Norte SAS",
+          "taxId": "900123456-7",
+          "taxRegime": "COMMON",
+          "billingEmail": "facturacion@distribucionesnorte.co",
+          "electronicInvoiceEmail": "facturacion@distribucionesnorte.co"
+        },
+        "addresses": [
+          {
+            "label": "Head Office",
+            "type": "WORK",
+            "usage": [
+              "BILLING",
+              "SHIPPING"
+            ],
+            "line1": "Carrera 45 #120-15",
+            "line2": "Bodega 8",
+            "city": "Bogota",
+            "state": "Cundinamarca",
+            "country": "CO",
+            "postalCode": "110221",
+            "instructions": "Ingreso por porteria de carga.",
+            "isPrimary": true,
+            "isBillingDefault": true
+          },
+          {
+            "label": "Branch Medellin",
+            "type": "WORK",
+            "usage": [
+              "SHIPPING"
+            ],
+            "line1": "Calle 10 #43A-20",
+            "line2": "Piso 2",
+            "city": "Medellin",
+            "state": "Antioquia",
+            "country": "CO",
+            "postalCode": "050021",
+            "instructions": "Recibir mercancia de lunes a viernes.",
+            "isPrimary": false,
+            "isBillingDefault": false
+          }
+        ],
+        "classification": {
+          "tags": [
+            "wholesale",
+            "priority-account"
+          ],
+          "customerGroup": "WHOLESALE"
+        },
+        "preferences": {
+          "invoiceDeliveryMethod": "EMAIL",
+          "receiptDeliveryMethod": "EMAIL",
+          "marketingOptIn": true,
+          "allowWhatsAppNotifications": false,
+          "doNotCall": false,
+          "doNotEmail": false,
+          "doNotWhatsApp": true,
+          "preferredContactTimeWindow": {
+            "start": "08:00",
+            "end": "17:00",
+            "timeZone": "America/Bogota"
+          }
+        },
+        "consents": {
+          "privacyAccepted": true,
+          "marketingOptIn": true
+        },
+        "notes": {
+          "internalNote": "Corporate account with centralized billing."
+        }
+      }
+]
+}

@@ -1,66 +1,15 @@
-import { Controller, Get, Post, Body, Param, Delete, UseGuards, HttpCode } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, HttpCode } from '@nestjs/common';
 import { AppService } from './app.service';
 import { AuthService } from './auth/auth.service';
-import { IsString, IsEmail, IsOptional, IsArray, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
-import { JwtAuthGuard } from './auth/jwt.guard';
-
-class CreateUserDto {
-  @IsString()
-  userId: string;
-
-  @IsString()
-  username: string;
-
-  @IsEmail()
-  email: string;
-
-  @IsOptional()
-  @IsString()
-  firstName?: string;
-
-  @IsOptional()
-  @IsString()
-  lastName?: string;
-
-  @IsOptional()
-  @IsArray()
-  roles?: string[];
-}
-
-class LoginDto {
-  @IsOptional()
-  @IsString()
-  username?: string;
-
-  @IsOptional()
-  @IsEmail()
-  email?: string;
-}
-
-class ProductDto {
-  @IsString()
-  productId: string;
-
-  @IsString()
-  sku: string;
-
-  @IsString()
-  name: string;
-
-  @IsOptional()
-  status?: string;
-
-  @IsOptional()
-  pricing?: any;
-
-  @IsOptional()
-  inventory?: any;
-}
+import { CreateUserDto, LoginDto } from './dto/user.dto';
+import { ProductDto } from './dto/product.dto';
+import { CreateCustomerDto } from './dto/customer.dto';
+import { CreateOrganizationDto } from './dto/organization.dto';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService, private readonly authService: AuthService) {}
+
 
   @Get()
   getHello(): string {
@@ -109,6 +58,36 @@ export class AppController {
   @Delete('products/:id')
   deleteProduct(@Param('id') id: string) {
     return this.appService.deleteProduct(id);
+  }
+
+  @Post('customers')
+  createCustomer(@Body() dto: CreateCustomerDto) {
+    return this.appService.createCustomer(dto as any);
+  }
+
+  @Get('customers')
+  getAllCustomers() {
+    return this.appService.getAllCustomers();
+  }
+
+  @Get('customers/:id')
+  getCustomer(@Param('id') id: string) {
+    return this.appService.getCustomer(id);
+  }
+
+  @Post('organizations')
+  createOrganization(@Body() dto: CreateOrganizationDto) {
+    return this.appService.createOrganization(dto as any);
+  }
+
+  @Get('organizations')
+  getAllOrganizations() {
+    return this.appService.getAllOrganizations();
+  }
+
+  @Get('organizations/:id')
+  getOrganization(@Param('id') id: string) {
+    return this.appService.getOrganization(id);
   }
 
   @HttpCode(200)

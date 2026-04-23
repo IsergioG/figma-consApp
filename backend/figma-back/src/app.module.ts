@@ -13,6 +13,7 @@ import { BusinessDay } from './entities/business-day.entity';
 import { CashDrawer } from './entities/cash-drawer.entity';
 import { FundingAccount } from './entities/funding-account.entity';
 import { LedgerContext } from './entities/ledger-context.entity';
+import { Customer } from './entities/customer.entity';
 import { AuthService } from './auth/auth.service';
 
 @Module({
@@ -34,6 +35,7 @@ import { AuthService } from './auth/auth.service';
         CashDrawer,
         FundingAccount,
         LedgerContext,
+        Customer,
       ],
       synchronize: true,
     }),
@@ -42,6 +44,7 @@ import { AuthService } from './auth/auth.service';
       Organization,
       Branch,
       Product,
+      Customer,
     ]),
     // Authentication module
     AuthModule,
