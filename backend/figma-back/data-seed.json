@@ -1,0 +1,280 @@
+{
+  "user": {
+    "userId": "user-001",
+    "username": "hawk.dev",
+    "email": "hawk.dev@crownstreetcaps.co",
+    "firstName": "Hawk",
+    "lastName": "Dev",
+    "roles": [
+      "OWNER"
+    ],
+    "defaultBranchId": "branch-bogota-flagship",
+    "branchAssignments": [
+      {
+        "branchId": "branch-bogota-flagship",
+        "roles": [
+          "OWNER"
+        ]
+      },
+      {
+        "branchId": "branch-medellin-studio",
+        "roles": [
+          "MANAGER"
+        ]
+      }
+    ]
+  },
+  "organization": {
+    "companyId": "company-crownstreet-001",
+    "companyName": "Crown Street Caps SAS",
+    "organizationType": "APPAREL_RETAIL",
+    "status": "ACTIVE",
+    "branches": [
+      {
+        "branchId": "branch-bogota-flagship",
+        "branchName": "Bogota Flagship",
+        "status": "ACTIVE"
+      },
+      {
+        "branchId": "branch-medellin-studio",
+        "branchName": "Medellin Studio",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "operatingContext": {
+    "branch": {
+      "branchId": "branch-bogota-flagship",
+      "branchName": "Bogota Flagship",
+      "status": "ACTIVE",
+      "address": {
+        "line1": "Calle 82 #11-45",
+        "line2": "Local 3",
+        "city": "Bogota",
+        "state": "Cundinamarca",
+        "country": "CO",
+        "postalCode": "110221"
+      },
+      "contactInfo": {
+        "phones": [
+          "+57 601 5550182",
+          "+57 320 5550182"
+        ],
+        "email": "bogota@crownstreetcaps.co"
+      },
+      "billingProfile": {
+        "legalName": "Crown Street Caps Bogota SAS",
+        "taxId": "900555123-8"
+      }
+    },
+    "products": [
+      {
+        "productId": "cap-001",
+        "sku": "CSC-AF-001-BLK",
+        "name": "Midnight Crest A-Frame Fitted Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 189000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 94000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 18
+        }
+      },
+      {
+        "productId": "cap-002",
+        "sku": "CSC-TR-002-STN",
+        "name": "Desert Meshback Trucker Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 149000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 72000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 26
+        }
+      },
+      {
+        "productId": "cap-003",
+        "sku": "CSC-RP-003-NVY",
+        "name": "Harbor Rope Course Snapback",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 159000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 79000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 11
+        }
+      },
+      {
+        "productId": "cap-004",
+        "sku": "CSC-UC-004-WHT",
+        "name": "Aero Drift Unstructured Performance Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 169000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 85000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 21
+        }
+      },
+      {
+        "productId": "cap-005",
+        "sku": "CSC-RN-005-GRY",
+        "name": "Night Signal Reflective Run Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 179000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 91000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 9
+        }
+      },
+      {
+        "productId": "cap-006",
+        "sku": "CSC-CL-006-OLV",
+        "name": "Summit Club Structured Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 139000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 68000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 33
+        }
+      },
+      {
+        "productId": "cap-007",
+        "sku": "CSC-FL-007-BLU",
+        "name": "Feather Pace Cooling Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 175000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 87000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 14
+        }
+      },
+      {
+        "productId": "cap-008",
+        "sku": "CSC-DC-008-KHK",
+        "name": "Old Town Curved Dad Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 129000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 61000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 29
+        }
+      },
+      {
+        "productId": "cap-009",
+        "sku": "CSC-GL-009-BRN",
+        "name": "Fairway Stitch Golf Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 164000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 81000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 13
+        }
+      },
+      {
+        "productId": "cap-010",
+        "sku": "CSC-TL-010-SGE",
+        "name": "Trailline Packable Adventure Cap",
+        "status": "ACTIVE",
+        "pricing": {
+          "sellPrice": {
+            "amount": 172000,
+            "currency": "COP"
+          },
+          "cost": {
+            "amount": 86000,
+            "currency": "COP"
+          }
+        },
+        "inventory": {
+          "availableQuantity": 16
+        }
+      }
+    ],
+    "financialContext": {
+      "businessDayId": "bfd-2026-04-16-bogota-flagship",
+      "cashDrawer": {
+        "cashDrawerId": "flagship-front-register-1",
+        "sessionId": "flagship-front-register-1-morning-001",
+        "status": "OPEN"
+      },
+      "fundingAccount": {
+        "fundingAccountId": "bogota-flagship-cash-main",
+        "type": "CASH",
+        "currency": "COP"
+      },
+      "ledgerContext": {
+        "operatingAccountId": "ledger-cash-bogota-flagship",
+        "branchToCompanyClearingAccountId": "ledger-clearing-bogota-flagship-to-company"
+      }
+    }
+  }
+}

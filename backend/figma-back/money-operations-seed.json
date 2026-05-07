@@ -1,0 +1,105 @@
+{
+  "data": [
+    {
+      "moneyOperationId": "mop_9003",
+      "operationType": "BRANCH_TRANSFER_SENT",
+      "branchId": "br_010",
+      "branchFinancialDayId": "bfd_2026_05_07_br_010",
+      "businessDate": "2026-05-07",
+      "medium": "WALLET",
+      "amount": 80000.00,
+      "currency": "COP",
+      "reasonCode": "INTERBRANCH_SUPPORT",
+      "description": "Temporary support transfer to Branch 014",
+      "operationStatus": "PENDING_APPROVAL",
+      "accountingStatus": "PENDING_LEDGER",
+      "approvalRequired": true,
+      "approvalMode": "MANAGER_STEP_UP",
+      "sourceContainer": {
+        "containerType": "WALLET",
+        "containerId": "wallet_nequi_br_010",
+        "fundingAccountId": "fa_wallet_010"
+      },
+      "destinationContainer": null,
+      "references": {
+        "targetBranchId": "br_014",
+        "transferMemo": "Temporary shortage support"
+      },
+      "evidenceAssetIds": [],
+      "requestedByUserId": "usr_manager_22",
+      "approvedByUserId": null,
+      "createdAt": "2026-05-07T15:38:03-05:00",
+      "approvedAt": null,
+      "executedAt": null
+    },
+    {
+      "moneyOperationId": "mop_9002",
+      "operationType": "URGENT_REPAIR_EXPENSE",
+      "branchId": "br_010",
+      "branchFinancialDayId": "bfd_2026_05_07_br_010",
+      "businessDate": "2026-05-07",
+      "medium": "CASH",
+      "amount": 120000.00,
+      "currency": "COP",
+      "reasonCode": "EMERGENCY_REPAIR",
+      "description": "Emergency plumbing repair paid from active drawer",
+      "operationStatus": "PENDING_APPROVAL",
+      "accountingStatus": "PENDING_LEDGER",
+      "approvalRequired": true,
+      "approvalMode": "MANAGER_STEP_UP",
+      "sourceContainer": {
+        "containerType": "CASH_DRAWER",
+        "containerId": "cash_drawer_cs_1001",
+        "cashSessionId": "cs_1001"
+      },
+      "destinationContainer": null,
+      "references": {
+        "vendorName": "Plomeria Express",
+        "invoiceReference": "REPAIR-991",
+        "expenseCategoryCode": "FACILITY_REPAIR"
+      },
+      "evidenceAssetIds": [
+        "ast_01J1RA3A2YH5K8N4M7P9Q1R2ST"
+      ],
+      "requestedByUserId": "usr_cashier_05",
+      "approvedByUserId": null,
+      "createdAt": "2026-05-07T15:35:44-05:00",
+      "approvedAt": null,
+      "executedAt": null
+    },
+    {
+      "moneyOperationId": "mop_9001",
+      "operationType": "SUPPLIER_PAYMENT",
+      "branchId": "br_010",
+      "branchFinancialDayId": "bfd_2026_05_07_br_010",
+      "businessDate": "2026-05-07",
+      "medium": "BANK_TRANSFER",
+      "amount": 150000.00,
+      "currency": "COP",
+      "reasonCode": "SUPPLIES_PAYMENT",
+      "description": "Invoice 7781 for branch paper and toner restock",
+      "operationStatus": "EXECUTED",
+      "accountingStatus": "PENDING_LEDGER",
+      "approvalRequired": true,
+      "approvalMode": "MANAGER_STEP_UP",
+      "sourceContainer": {
+        "containerType": "BANK",
+        "containerId": "bank_bancolombia_ops_010",
+        "fundingAccountId": "fa_bank_010"
+      },
+      "destinationContainer": null,
+      "references": {
+        "supplierId": "sup_2001",
+        "invoiceReference": "INV-7781"
+      },
+      "evidenceAssetIds": [
+        "ast_01J1R91K8Y4D3S2Q6T7U8V9W0X"
+      ],
+      "requestedByUserId": "usr_manager_22",
+      "approvedByUserId": "usr_manager_07",
+      "createdAt": "2026-05-07T15:42:18-05:00",
+      "approvedAt": "2026-05-07T15:45:02-05:00",
+      "executedAt": "2026-05-07T15:45:03-05:00"
+    }
+  ]
+}

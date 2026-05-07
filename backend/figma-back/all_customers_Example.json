@@ -1,0 +1,1207 @@
+{
+  "requestContext": {
+    "requestId": "req-customer-admin-list-020",
+    "correlationId": "corr-customer-admin-list-020",
+    "servedAt": "2026-04-22T22:00:00Z"
+  },
+  "data": [
+    {
+      "customerId": "cust-0001",
+      "customerCode": "CUST-0001",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Ana Maria Torres",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0001-01",
+            "type": "MOBILE",
+            "number": "+57 320 555 0101",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          },
+          {
+            "phoneId": "phone-0001-02",
+            "type": "WORK",
+            "number": "+57 601 555 1101",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0001-01",
+            "type": "PERSONAL",
+            "address": "ana.torres@example.com",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0001-02",
+            "type": "WORK",
+            "address": "ana.torres@clienteco.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0001-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 100 #10-20",
+          "line2": "Apto 402",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110111",
+          "isPrimary": true
+        },
+        {
+          "addressId": "addr-0001-02",
+          "label": "Office",
+          "type": "WORK",
+          "line1": "Carrera 15 #93-60",
+          "line2": "Oficina 301",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110221",
+          "isPrimary": false
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0002",
+      "customerCode": "CUST-0002",
+      "companyId": "company-hawk-001",
+      "customerType": "BUSINESS",
+      "status": "ACTIVE",
+      "displayName": "Distribuciones Norte SAS",
+      "source": "ADMIN",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0002-01",
+            "type": "WORK",
+            "number": "+57 601 555 9900",
+            "isPrimary": true,
+            "isWhatsAppEnabled": false
+          },
+          {
+            "phoneId": "phone-0002-02",
+            "type": "WORK",
+            "number": "+57 601 555 9910",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0002-01",
+            "type": "WORK",
+            "address": "compras@distribucionesnorte.co",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0002-02",
+            "type": "WORK",
+            "address": "facturacion@distribucionesnorte.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0002-01",
+          "label": "Head Office",
+          "type": "WORK",
+          "line1": "Carrera 45 #120-15",
+          "line2": "Bodega 8",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110221",
+          "isPrimary": true
+        },
+        {
+          "addressId": "addr-0002-02",
+          "label": "Branch Medellin",
+          "type": "WORK",
+          "line1": "Calle 10 #43A-20",
+          "line2": "Piso 2",
+          "city": "Medellin",
+          "state": "Antioquia",
+          "country": "CO",
+          "postalCode": "050021",
+          "isPrimary": false
+        }
+      ],
+      "businessProfile": {
+        "legalName": "Distribuciones Norte SAS",
+        "tradeName": "Distribuciones Norte",
+        "taxId": "900123456-7",
+        "industry": "WHOLESALE_DISTRIBUTION",
+        "contactPersons": [
+          {
+            "contactPersonId": "cp-0002-01",
+            "fullName": "Maria Fernanda Rios",
+            "role": "PURCHASING_MANAGER",
+            "phone": "+57 601 555 9900",
+            "email": "compras@distribucionesnorte.co",
+            "isPrimary": true
+          },
+          {
+            "contactPersonId": "cp-0002-02",
+            "fullName": "Jorge Londono",
+            "role": "ACCOUNTING",
+            "phone": "+57 601 555 9910",
+            "email": "facturacion@distribucionesnorte.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "classificationSummary": {
+        "customerGroup": "WHOLESALE"
+      }
+    },
+    {
+      "customerId": "cust-0003",
+      "customerCode": "CUST-0003",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Carlos Andres Mejia",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0003-01",
+            "type": "MOBILE",
+            "number": "+57 311 555 0103",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0003-01",
+            "type": "PERSONAL",
+            "address": "carlos.mejia@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0003-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 72 #19-33",
+          "line2": "Casa 4",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110231",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0004",
+      "customerCode": "CUST-0004",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Laura Camila Rojas",
+      "source": "API",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0004-01",
+            "type": "MOBILE",
+            "number": "+57 315 555 0104",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          },
+          {
+            "phoneId": "phone-0004-02",
+            "type": "HOME",
+            "number": "+57 601 555 2104",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0004-01",
+            "type": "PERSONAL",
+            "address": "laura.rojas@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0004-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Carrera 11 #82-40",
+          "line2": "Apto 701",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110221",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0005",
+      "customerCode": "CUST-0005",
+      "companyId": "company-hawk-001",
+      "customerType": "BUSINESS",
+      "status": "ACTIVE",
+      "displayName": "Comercializadora Andina SAS",
+      "source": "ADMIN",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0005-01",
+            "type": "WORK",
+            "number": "+57 601 555 0205",
+            "isPrimary": true,
+            "isWhatsAppEnabled": false
+          },
+          {
+            "phoneId": "phone-0005-02",
+            "type": "WORK",
+            "number": "+57 601 555 1205",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0005-01",
+            "type": "WORK",
+            "address": "facturacion@andina.co",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0005-02",
+            "type": "WORK",
+            "address": "compras@andina.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0005-01",
+          "label": "Main Office",
+          "type": "WORK",
+          "line1": "Autopista Norte Km 7",
+          "line2": "Parque Industrial 3",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "111166",
+          "isPrimary": true
+        }
+      ],
+      "businessProfile": {
+        "legalName": "Comercializadora Andina SAS",
+        "tradeName": "Andina",
+        "taxId": "901234567-1",
+        "industry": "WHOLESALE_RETAIL",
+        "contactPersons": [
+          {
+            "contactPersonId": "cp-0005-01",
+            "fullName": "Diana Moreno",
+            "role": "GENERAL_MANAGER",
+            "phone": "+57 601 555 0205",
+            "email": "d.moreno@andina.co",
+            "isPrimary": true
+          }
+        ]
+      },
+      "classificationSummary": {
+        "customerGroup": "DISTRIBUTOR"
+      }
+    },
+    {
+      "customerId": "cust-0006",
+      "customerCode": "CUST-0006",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Julian Felipe Vargas",
+      "source": "IMPORT",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0006-01",
+            "type": "MOBILE",
+            "number": "+57 300 555 0106",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0006-01",
+            "type": "PERSONAL",
+            "address": "julian.vargas@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0006-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 50 #24-10",
+          "line2": "Apto 203",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110311",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0007",
+      "customerCode": "CUST-0007",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Sofia Martinez",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0007-01",
+            "type": "MOBILE",
+            "number": "+57 310 555 0107",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          },
+          {
+            "phoneId": "phone-0007-02",
+            "type": "WORK",
+            "number": "+57 604 555 0107",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0007-01",
+            "type": "PERSONAL",
+            "address": "sofia.martinez@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0007-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Transversal 39 #74-19",
+          "line2": "Casa 12",
+          "city": "Medellin",
+          "state": "Antioquia",
+          "country": "CO",
+          "postalCode": "050031",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "VIP"
+      }
+    },
+    {
+      "customerId": "cust-0008",
+      "customerCode": "CUST-0008",
+      "companyId": "company-hawk-001",
+      "customerType": "BUSINESS",
+      "status": "ACTIVE",
+      "displayName": "Textiles del Centro Ltda",
+      "source": "ADMIN",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0008-01",
+            "type": "WORK",
+            "number": "+57 604 555 0208",
+            "isPrimary": true,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0008-01",
+            "type": "WORK",
+            "address": "pedidos@textilescentro.co",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0008-02",
+            "type": "WORK",
+            "address": "cartera@textilescentro.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0008-01",
+          "label": "Plant",
+          "type": "WORK",
+          "line1": "Carrera 52 #45-18",
+          "line2": "Bodega 2",
+          "city": "Medellin",
+          "state": "Antioquia",
+          "country": "CO",
+          "postalCode": "050015",
+          "isPrimary": true
+        },
+        {
+          "addressId": "addr-0008-02",
+          "label": "Showroom",
+          "type": "WORK",
+          "line1": "Calle 10 #35-50",
+          "line2": "Local 6",
+          "city": "Medellin",
+          "state": "Antioquia",
+          "country": "CO",
+          "postalCode": "050021",
+          "isPrimary": false
+        }
+      ],
+      "businessProfile": {
+        "legalName": "Textiles del Centro Ltda",
+        "tradeName": "Textiles Centro",
+        "taxId": "890765432-3",
+        "industry": "TEXTILE_MANUFACTURING",
+        "contactPersons": [
+          {
+            "contactPersonId": "cp-0008-01",
+            "fullName": "Luisa Gomez",
+            "role": "SALES_MANAGER",
+            "phone": "+57 604 555 0208",
+            "email": "pedidos@textilescentro.co",
+            "isPrimary": true
+          }
+        ]
+      },
+      "classificationSummary": {
+        "customerGroup": "WHOLESALE"
+      }
+    },
+    {
+      "customerId": "cust-0009",
+      "customerCode": "CUST-0009",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Miguel Angel Pardo",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0009-01",
+            "type": "MOBILE",
+            "number": "+57 320 555 0109",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0009-01",
+            "type": "PERSONAL",
+            "address": "miguel.pardo@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0009-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 134 #7B-91",
+          "line2": "Apto 605",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110121",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0010",
+      "customerCode": "CUST-0010",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Natalia Restrepo",
+      "source": "API",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0010-01",
+            "type": "MOBILE",
+            "number": "+57 321 555 0110",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          },
+          {
+            "phoneId": "phone-0010-02",
+            "type": "HOME",
+            "number": "+57 604 555 1110",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0010-01",
+            "type": "PERSONAL",
+            "address": "natalia.restrepo@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0010-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 33 #76-11",
+          "line2": "Apto 1002",
+          "city": "Medellin",
+          "state": "Antioquia",
+          "country": "CO",
+          "postalCode": "050031",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0011",
+      "customerCode": "CUST-0011",
+      "companyId": "company-hawk-001",
+      "customerType": "BUSINESS",
+      "status": "ACTIVE",
+      "displayName": "Insumos Industriales Bogota SAS",
+      "source": "ADMIN",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0011-01",
+            "type": "WORK",
+            "number": "+57 601 555 0211",
+            "isPrimary": true,
+            "isWhatsAppEnabled": false
+          },
+          {
+            "phoneId": "phone-0011-02",
+            "type": "WORK",
+            "number": "+57 601 555 1211",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0011-01",
+            "type": "WORK",
+            "address": "compras@insumosbogota.co",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0011-02",
+            "type": "WORK",
+            "address": "pagos@insumosbogota.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0011-01",
+          "label": "Main Warehouse",
+          "type": "WORK",
+          "line1": "Zona Industrial Calle 80",
+          "line2": "Bodega 14",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "111071",
+          "isPrimary": true
+        }
+      ],
+      "businessProfile": {
+        "legalName": "Insumos Industriales Bogota SAS",
+        "tradeName": "Insumos Bogota",
+        "taxId": "900456123-9",
+        "industry": "INDUSTRIAL_SUPPLIES",
+        "contactPersons": [
+          {
+            "contactPersonId": "cp-0011-01",
+            "fullName": "Camila Pineda",
+            "role": "PROCUREMENT",
+            "phone": "+57 601 555 0211",
+            "email": "compras@insumosbogota.co",
+            "isPrimary": true
+          }
+        ]
+      },
+      "classificationSummary": {
+        "customerGroup": "B2B"
+      }
+    },
+    {
+      "customerId": "cust-0012",
+      "customerCode": "CUST-0012",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Daniela Gomez",
+      "source": "IMPORT",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0012-01",
+            "type": "MOBILE",
+            "number": "+57 314 555 0112",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0012-01",
+            "type": "PERSONAL",
+            "address": "daniela.gomez@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0012-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 48 #18-65",
+          "line2": "Apto 303",
+          "city": "Bucaramanga",
+          "state": "Santander",
+          "country": "CO",
+          "postalCode": "680001",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0013",
+      "customerCode": "CUST-0013",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Ricardo Salazar",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0013-01",
+            "type": "MOBILE",
+            "number": "+57 318 555 0113",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0013-01",
+            "type": "PERSONAL",
+            "address": "ricardo.salazar@example.com",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0013-02",
+            "type": "WORK",
+            "address": "rsalazar@empresa.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0013-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Carrera 70 #44-12",
+          "line2": "Apto 802",
+          "city": "Cali",
+          "state": "Valle del Cauca",
+          "country": "CO",
+          "postalCode": "760031",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "VIP"
+      }
+    },
+    {
+      "customerId": "cust-0014",
+      "customerCode": "CUST-0014",
+      "companyId": "company-hawk-001",
+      "customerType": "BUSINESS",
+      "status": "ACTIVE",
+      "displayName": "Alimentos San Pedro SAS",
+      "source": "ADMIN",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0014-01",
+            "type": "WORK",
+            "number": "+57 605 555 0214",
+            "isPrimary": true,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0014-01",
+            "type": "WORK",
+            "address": "cartera@alimentossanpedro.co",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0014-02",
+            "type": "WORK",
+            "address": "compras@alimentossanpedro.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0014-01",
+          "label": "Factory",
+          "type": "WORK",
+          "line1": "Via 40 #85-100",
+          "line2": "Planta 1",
+          "city": "Barranquilla",
+          "state": "Atlantico",
+          "country": "CO",
+          "postalCode": "080002",
+          "isPrimary": true
+        }
+      ],
+      "businessProfile": {
+        "legalName": "Alimentos San Pedro SAS",
+        "tradeName": "San Pedro",
+        "taxId": "901998877-4",
+        "industry": "FOOD_DISTRIBUTION",
+        "contactPersons": [
+          {
+            "contactPersonId": "cp-0014-01",
+            "fullName": "Andres Cepeda",
+            "role": "OPERATIONS_MANAGER",
+            "phone": "+57 605 555 0214",
+            "email": "ops@alimentossanpedro.co",
+            "isPrimary": true
+          }
+        ]
+      },
+      "classificationSummary": {
+        "customerGroup": "DISTRIBUTOR"
+      }
+    },
+    {
+      "customerId": "cust-0015",
+      "customerCode": "CUST-0015",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Paula Andrea Nieto",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0015-01",
+            "type": "MOBILE",
+            "number": "+57 302 555 0115",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0015-01",
+            "type": "PERSONAL",
+            "address": "paula.nieto@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0015-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 21 #7-45",
+          "line2": "Casa 2",
+          "city": "Tunja",
+          "state": "Boyaca",
+          "country": "CO",
+          "postalCode": "150001",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0016",
+      "customerCode": "CUST-0016",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Felipe Hernandez",
+      "source": "API",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0016-01",
+            "type": "MOBILE",
+            "number": "+57 301 555 0116",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0016-01",
+            "type": "PERSONAL",
+            "address": "felipe.hernandez@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0016-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Carrera 8 #56-77",
+          "line2": "Apto 505",
+          "city": "Pereira",
+          "state": "Risaralda",
+          "country": "CO",
+          "postalCode": "660001",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0017",
+      "customerCode": "CUST-0017",
+      "companyId": "company-hawk-001",
+      "customerType": "BUSINESS",
+      "status": "ACTIVE",
+      "displayName": "Papeleria Moderna EU",
+      "source": "IMPORT",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0017-01",
+            "type": "WORK",
+            "number": "+57 601 555 0217",
+            "isPrimary": true,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0017-01",
+            "type": "WORK",
+            "address": "ventas@papeleriamoderna.co",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0017-02",
+            "type": "WORK",
+            "address": "compras@papeleriamoderna.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0017-01",
+          "label": "Store",
+          "type": "WORK",
+          "line1": "Calle 53 #13-20",
+          "line2": "Local 4",
+          "city": "Bogota",
+          "state": "Cundinamarca",
+          "country": "CO",
+          "postalCode": "110231",
+          "isPrimary": true
+        }
+      ],
+      "businessProfile": {
+        "legalName": "Papeleria Moderna EU",
+        "tradeName": "Papeleria Moderna",
+        "taxId": "830112233-5",
+        "industry": "OFFICE_SUPPLIES",
+        "contactPersons": [
+          {
+            "contactPersonId": "cp-0017-01",
+            "fullName": "Sandra Ruiz",
+            "role": "OWNER",
+            "phone": "+57 601 555 0217",
+            "email": "ventas@papeleriamoderna.co",
+            "isPrimary": true
+          }
+        ]
+      },
+      "classificationSummary": {
+        "customerGroup": "B2B"
+      }
+    },
+    {
+      "customerId": "cust-0018",
+      "customerCode": "CUST-0018",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Camilo Suarez",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0018-01",
+            "type": "MOBILE",
+            "number": "+57 313 555 0118",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0018-01",
+            "type": "PERSONAL",
+            "address": "camilo.suarez@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0018-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Calle 9 #18-44",
+          "line2": "Casa 7",
+          "city": "Ibague",
+          "state": "Tolima",
+          "country": "CO",
+          "postalCode": "730001",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "RETAIL"
+      }
+    },
+    {
+      "customerId": "cust-0019",
+      "customerCode": "CUST-0019",
+      "companyId": "company-hawk-001",
+      "customerType": "PERSON",
+      "status": "ACTIVE",
+      "displayName": "Valentina Castro",
+      "source": "POS",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0019-01",
+            "type": "MOBILE",
+            "number": "+57 316 555 0119",
+            "isPrimary": true,
+            "isWhatsAppEnabled": true
+          },
+          {
+            "phoneId": "phone-0019-02",
+            "type": "HOME",
+            "number": "+57 604 555 1119",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0019-01",
+            "type": "PERSONAL",
+            "address": "valentina.castro@example.com",
+            "isPrimary": true
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0019-01",
+          "label": "Home",
+          "type": "HOME",
+          "line1": "Carrera 28 #14-90",
+          "line2": "Apto 201",
+          "city": "Manizales",
+          "state": "Caldas",
+          "country": "CO",
+          "postalCode": "170001",
+          "isPrimary": true
+        }
+      ],
+      "classificationSummary": {
+        "customerGroup": "VIP"
+      }
+    },
+    {
+      "customerId": "cust-0020",
+      "customerCode": "CUST-0020",
+      "companyId": "company-hawk-001",
+      "customerType": "BUSINESS",
+      "status": "ACTIVE",
+      "displayName": "Servicios Logisticos Delta SAS",
+      "source": "ADMIN",
+      "contact": {
+        "phones": [
+          {
+            "phoneId": "phone-0020-01",
+            "type": "WORK",
+            "number": "+57 604 555 0220",
+            "isPrimary": true,
+            "isWhatsAppEnabled": false
+          },
+          {
+            "phoneId": "phone-0020-02",
+            "type": "WORK",
+            "number": "+57 604 555 1220",
+            "isPrimary": false,
+            "isWhatsAppEnabled": false
+          }
+        ],
+        "emails": [
+          {
+            "emailId": "email-0020-01",
+            "type": "WORK",
+            "address": "operaciones@delta-logistica.co",
+            "isPrimary": true
+          },
+          {
+            "emailId": "email-0020-02",
+            "type": "WORK",
+            "address": "facturacion@delta-logistica.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "addresses": [
+        {
+          "addressId": "addr-0020-01",
+          "label": "Head Office",
+          "type": "WORK",
+          "line1": "Autopista Medellin Km 4",
+          "line2": "Centro Logistico 9",
+          "city": "Medellin",
+          "state": "Antioquia",
+          "country": "CO",
+          "postalCode": "050041",
+          "isPrimary": true
+        },
+        {
+          "addressId": "addr-0020-02",
+          "label": "Yard Cartagena",
+          "type": "WORK",
+          "line1": "Zona Portuaria Lote 12",
+          "line2": "Patio 3",
+          "city": "Cartagena",
+          "state": "Bolivar",
+          "country": "CO",
+          "postalCode": "130001",
+          "isPrimary": false
+        }
+      ],
+      "businessProfile": {
+        "legalName": "Servicios Logisticos Delta SAS",
+        "tradeName": "Delta Logistica",
+        "taxId": "901445566-2",
+        "industry": "LOGISTICS_SERVICES",
+        "contactPersons": [
+          {
+            "contactPersonId": "cp-0020-01",
+            "fullName": "Sebastian Rojas",
+            "role": "OPERATIONS_LEAD",
+            "phone": "+57 604 555 0220",
+            "email": "operaciones@delta-logistica.co",
+            "isPrimary": true
+          },
+          {
+            "contactPersonId": "cp-0020-02",
+            "fullName": "Paola Diaz",
+            "role": "FINANCE",
+            "phone": "+57 604 555 1220",
+            "email": "facturacion@delta-logistica.co",
+            "isPrimary": false
+          }
+        ]
+      },
+      "classificationSummary": {
+        "customerGroup": "WHOLESALE"
+      }
+    }
+  ],
+  "page": {
+    "limit": 20,
+    "count": 20,
+    "nextCursor": "cursor-customer-admin-expanded-page-002"
+  }
+}
