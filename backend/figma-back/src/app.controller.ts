@@ -5,6 +5,7 @@ import { CreateUserDto, LoginDto } from './dto/user.dto';
 import { ProductDto } from './dto/product.dto';
 import { CreateCustomerDto } from './dto/customer.dto';
 import { CreateOrganizationDto } from './dto/organization.dto';
+import { CreateMoneyOperationDto } from './dto/money-operation.dto';
 
 @Controller()
 export class AppController {
@@ -73,6 +74,24 @@ export class AppController {
   @Get('customers/:id')
   getCustomer(@Param('id') id: string) {
     return this.appService.getCustomer(id);
+  }
+
+  @HttpCode(200)
+  @Post('transactions')
+  createTransaction(@Body() dto: CreateMoneyOperationDto) {
+    return this.appService.createTransaction(dto as any);
+  }
+
+  @HttpCode(200)
+  @Get('transactions')
+  getAllTransactions() {
+    return this.appService.getAllTransactions();
+  }
+
+  @HttpCode(200)
+  @Get('transactions/:id')
+  getTransaction(@Param('id') id: string) {
+    return this.appService.getTransaction(id);
   }
 
   @Post('organizations')

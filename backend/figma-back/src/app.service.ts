@@ -5,6 +5,7 @@ import { User } from './entities/user.entity';
 import { Product } from './entities/product.entity';
 import { Customer } from './entities/customer.entity';
 import { Organization } from './entities/organization.entity';
+import { MoneyOperation } from './entities/money-operation.entity';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -19,6 +20,8 @@ export class AppService implements OnModuleInit {
     private readonly customerRepo: Repository<Customer>,
     @InjectRepository(Organization)
     private readonly organizationRepo: Repository<Organization>,
+    @InjectRepository(MoneyOperation)
+    private readonly moneyOperationRepo: Repository<MoneyOperation>,
   ) {}
 
   getHello(): string {
@@ -26,7 +29,10 @@ export class AppService implements OnModuleInit {
   }
 
   async onModuleInit() {
+    await this.ensureMoneyOperationSequence();
     await this.seedDefaultOrganizationsAndCustomers();
+    await this.seedMoneyOperations();
+    await this.syncMoneyOperationSequence();
     if (process.env.SEED === 'true') {
       await this.seedFromFile();
     }
@@ -118,6 +124,75 @@ export class AppService implements OnModuleInit {
     return this.customerRepo.findOneBy({ customerId: id } as any);
   }
 
+  async createTransaction(data: Partial<MoneyOperation>) {
+    const generatedBranchId = data.branchId ?? this.generateBranchId();
+    const generatedBusinessDate = data.businessDate ?? this.getTodayDate();
+    const generatedBranchFinancialDayId =
+      data.branchFinancialDayId ?? this.generateBranchFinancialDayId(generatedBranchId, generatedBusinessDate);
+
+    const tx = this.moneyOperationRepo.create({
+      moneyOperationId: data.moneyOperationId,
+      operationType: data.operationType,
+      branchId: generatedBranchId,
+      branchFinancialDayId: generatedBranchFinancialDayId,
+      businessDate: generatedBusinessDate,
+      medium: data.medium,
+      amount: data.amount,
+      currency: data.currency,
+      reasonCode: data.reasonCode,
+      description: data.description,
+      operationStatus: data.operationStatus,
+      accountingStatus: data.accountingStatus,
+      approvalRequired: data.approvalRequired ?? false,
+      approvalMode: data.approvalMode,
+      sourceContainer: data.sourceContainer,
+      destinationContainer: data.destinationContainer,
+      references: data.references,
+      evidenceAssetIds: data.evidenceAssetIds,
+      requestedByUserId: data.requestedByUserId,
+      approvedByUserId: data.approvedByUserId,
+      createdAt: data.createdAt ?? new Date().toISOString(),
+      approvedAt: data.approvedAt,
+      executedAt: data.executedAt,
+    });
+    return this.moneyOperationRepo.save(tx);
+  }
+
+  async getAllTransactions() {
+    const data = await this.moneyOperationRepo.find();
+    const servedAt = new Date().toISOString();
+    return {
+      requestContext: {
+        requestId: `req-money-operations-list-${Date.now()}`,
+        correlationId: `corr-money-operations-list-${servedAt.slice(0, 10)}`,
+        servedAt,
+      },
+      data,
+      page: {
+        limit: data.length,
+        count: data.length,
+        nextCursor: null,
+      },
+    };
+  }
+
+  async getTransaction(id: string) {
+    return this.moneyOperationRepo.findOneBy({ moneyOperationId: id } as any);
+  }
+
+  private generateBranchId() {
+    const nextId = Date.now() % 1000;
+    return `br_${(10 + nextId).toString().padStart(3, '0')}`;
+  }
+
+  private generateBranchFinancialDayId(branchId: string, businessDate: string) {
+    return `bfd_${businessDate.replace(/-/g, '_')}_${branchId}`;
+  }
+
+  private getTodayDate() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
   async createOrganization(data: Partial<Organization>) {
     const org = this.organizationRepo.create({
       companyId: data.companyId,
@@ -205,6 +280,82 @@ export class AppService implements OnModuleInit {
       .split('-')
       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
       .join(' ');
+  }
+
+  private async seedMoneyOperations() {
+    try {
+      const existingOperations = await this.moneyOperationRepo.count();
+      if (existingOperations > 0) return;
+
+      const file = path.resolve(process.cwd(), 'money-operations-seed.json');
+      if (!fs.existsSync(file)) return;
+
+      const raw = fs.readFileSync(file, 'utf8');
+      const payload = JSON.parse(raw);
+      const operations = Array.isArray(payload?.data) ? payload.data : [];
+      if (operations.length === 0) return;
+
+      const mappedOperations = operations.map((op: any) =>
+        this.moneyOperationRepo.create({
+          moneyOperationId: op.moneyOperationId,
+          operationType: op.operationType,
+          branchId: op.branchId,
+          branchFinancialDayId: op.branchFinancialDayId,
+          businessDate: op.businessDate,
+          medium: op.medium,
+          amount: op.amount,
+          currency: op.currency,
+          reasonCode: op.reasonCode,
+          description: op.description,
+          operationStatus: op.operationStatus,
+          accountingStatus: op.accountingStatus,
+          approvalRequired: op.approvalRequired ?? false,
+          approvalMode: op.approvalMode,
+          sourceContainer: op.sourceContainer,
+          destinationContainer: op.destinationContainer,
+          references: op.references,
+          evidenceAssetIds: op.evidenceAssetIds,
+          requestedByUserId: op.requestedByUserId,
+          approvedByUserId: op.approvedByUserId,
+          createdAt: op.createdAt,
+          approvedAt: op.approvedAt,
+          executedAt: op.executedAt,
+        }),
+      );
+
+      await this.moneyOperationRepo.save(mappedOperations);
+      await this.syncMoneyOperationSequence();
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Money operation seed error', err?.message ?? err);
+    }
+  }
+
+  private async ensureMoneyOperationSequence() {
+    try {
+      await this.moneyOperationRepo.query(
+        "CREATE SEQUENCE IF NOT EXISTS money_operation_id_seq START WITH 9001;",
+      );
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Money operation sequence create error', err?.message ?? err);
+    }
+  }
+
+  private async syncMoneyOperationSequence() {
+    try {
+      const result = await this.moneyOperationRepo.query(
+        "SELECT MAX(CAST(substring(money_operation_id from 'mop_(\\d+)') AS integer)) AS maxid FROM money_operation",
+      );
+      const maxId = Number(result?.[0]?.maxid ?? 0);
+      const nextValue = Math.max(9001, maxId + 1);
+      await this.moneyOperationRepo.query(
+        `SELECT setval('money_operation_id_seq', ${nextValue - 1}, false);`,
+      );
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Money operation sequence sync error', err?.message ?? err);
+    }
   }
 
   private async seedFromFile() {

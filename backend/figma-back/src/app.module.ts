@@ -14,6 +14,7 @@ import { CashDrawer } from './entities/cash-drawer.entity';
 import { FundingAccount } from './entities/funding-account.entity';
 import { LedgerContext } from './entities/ledger-context.entity';
 import { Customer } from './entities/customer.entity';
+import { MoneyOperation } from './entities/money-operation.entity';
 import { AuthService } from './auth/auth.service';
 
 @Module({
@@ -36,6 +37,7 @@ import { AuthService } from './auth/auth.service';
         FundingAccount,
         LedgerContext,
         Customer,
+        MoneyOperation,
       ],
       synchronize: true,
     }),
@@ -45,6 +47,7 @@ import { AuthService } from './auth/auth.service';
       Branch,
       Product,
       Customer,
+      MoneyOperation,
     ]),
     // Authentication module
     AuthModule,
